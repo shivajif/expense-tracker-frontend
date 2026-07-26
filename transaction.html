@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transactions</title>
+
+
+<link rel="stylesheet" href="css/transaction.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="sidebar">
+
+
+<h2>
+Expense Tracker
+</h2>
+
+
+<ul>
+
+
+<li onclick="location.href='dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+Dashboard
+
+</li>
+
+
+
+<li onclick="location.href='category.html'">
+
+<i class="fa-solid fa-list"></i>
+Categories
+
+</li>
+
+
+
+
+<li class="active">
+
+<i class="fa-solid fa-money-bill"></i>
+Transactions
+
+</li>
+
+
+
+
+<li onclick="location.href='reports.html'">
+
+<i class="fa-solid fa-chart-column"></i>
+Reports
+
+</li>
+
+
+
+<li onclick="logout()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+
+</li>
+
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="main">
+
+
+<div class="top">
+
+
+<h1>
+Transactions
+</h1>
+
+
+
+<button onclick="openPopup()">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Transaction
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="filter-box">
+
+
+<input 
+type="text"
+id="search"
+placeholder="Search Transaction..."
+onkeyup="searchTransaction()">
+
+
+
+<select id="typeFilter"
+onchange="filterTransaction()">
+
+
+
+<option value="ALL">
+All
+</option>
+
+
+<option value="INCOME">
+Income
+</option>
+
+
+<option value="EXPENSE">
+Expense
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="transactionList"
+class="transaction-grid">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- POPUP -->
+
+
+<div id="popup"
+class="popup">
+
+
+
+<div class="popup-content">
+
+
+<h2>
+Add Transaction
+</h2>
+
+
+
+<input
+id="title"
+placeholder="Title">
+
+
+
+
+
+<input
+id="amount"
+type="number"
+placeholder="Amount">
+
+
+
+
+
+<select id="type">
+
+
+<option value="EXPENSE">
+Expense
+</option>
+
+
+<option value="INCOME">
+Income
+</option>
+
+
+</select>
+
+
+
+
+
+<input
+id="date"
+type="date">
+
+
+
+
+
+<textarea
+id="description"
+placeholder="Description">
+</textarea>
+
+
+
+
+
+<select id="category">
+
+
+</select>
+
+
+
+
+<button onclick="saveTransaction()">
+
+Save
+
+</button>
+
+
+
+
+<button class="cancel"
+onclick="closePopup()">
+
+Cancel
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script src="js/api.js"></script>
+
+<script src="js/transaction.js"></script>
+
+
+
+</body>
+
+</html>

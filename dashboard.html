@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker Dashboard</title>
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- ===========================
+Overlay
+=========================== -->
+
+<div class="overlay"
+     id="overlay"
+     onclick="toggleSidebar()">
+</div>
+
+<!-- ===========================
+Sidebar
+=========================== -->
+
+<div class="sidebar"
+     id="sidebar">
+
+    <h2>
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span class="logo-text">
+
+            Expense Tracker
+
+        </span>
+
+    </h2>
+
+    <ul>
+
+        <!-- Always Visible -->
+
+        <li class="active"
+            onclick="location.href='dashboard.html'">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+
+                Dashboard
+
+            </span>
+
+        </li>
+
+        <!-- Hidden When Sidebar Closed -->
+
+        <li class="menu-item"
+            onclick="location.href='profile.html'">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+
+                Profile
+
+            </span>
+
+        </li>
+
+        <li class="menu-item"
+            onclick="location.href='category.html'">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <span>
+
+                Categories
+
+            </span>
+
+        </li>
+
+        <li class="menu-item"
+            onclick="location.href='transaction.html'">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <span>
+
+                Transactions
+
+            </span>
+
+        </li>
+
+        <li class="menu-item"
+            onclick="location.href='reports.html'">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <span>
+
+                Reports
+
+            </span>
+
+        </li>
+
+        <!-- Always Visible -->
+
+        <li onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+
+                Logout
+
+            </span>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ===========================
+Main
+=========================== -->
+
+<div class="main">
+
+    <!-- =======================
+Topbar
+======================= -->
+
+    <div class="topbar">
+
+        <div class="top-left">
+
+            <i class="fa-solid fa-bars menu-btn"
+               onclick="toggleSidebar()"></i>
+
+            <h1>
+
+                Dashboard
+
+            </h1>
+
+        </div>
+
+        <div class="top-right">
+
+            <h3 id="username">
+
+                Welcome 👋
+
+            </h3>
+
+            <div class="profile-icon"
+                 onclick="location.href='profile.html'">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+Cards
+======================= -->
+
+    <div class="cards">
+
+        <div class="card income">
+
+            <h2>
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                Income
+
+            </h2>
+
+            <h1 id="income">
+
+                ₹0
+
+            </h1>
+
+        </div>
+
+        <div class="card expense">
+
+            <h2>
+
+                <i class="fa-solid fa-arrow-trend-down"></i>
+
+                Expense
+
+            </h2>
+
+            <h1 id="expense">
+
+                ₹0
+
+            </h1>
+
+        </div>
+
+        <div class="card balance">
+
+            <h2>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Balance
+
+            </h2>
+
+            <h1 id="balance">
+
+                ₹0
+
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+Charts
+======================= -->
+
+    <div class="charts">
+
+        <div class="chart-box">
+
+            <h2>
+
+                Expense by Category
+
+            </h2>
+
+            <canvas id="expenseChart">
+
+            </canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <h2>
+
+                Income vs Expense
+
+            </h2>
+
+            <canvas id="incomeExpenseChart">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+Recent Transactions
+======================= -->
+
+    <div class="recent">
+
+        <h2>
+
+            Recent Transactions
+
+        </h2>
+
+        <div id="recentTransactions">
+
+            Loading...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

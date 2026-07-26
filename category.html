@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="css/category.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Expense Tracker</h2>
+
+    <ul>
+
+        <li onclick="location.href='dashboard.html'">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </li>
+
+       <li onclick="location.href='category.html'">
+
+    <i class="fa-solid fa-layer-group"></i>
+
+    Categories
+
+</li>
+        <li onclick="location.href='transaction.html'">
+
+    <i class="fa-solid fa-money-bill-transfer"></i>
+
+    Transactions
+
+</li>
+        <li onclick="location.href='reports.html'">
+
+    <i class="fa-solid fa-chart-column"></i>
+
+    Reports
+
+</li>
+
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="main">
+
+    <div class="top">
+
+        <h1>Categories</h1>
+
+        <button onclick="openPopup()">
+            <i class="fa-solid fa-plus"></i>
+            Add Category
+        </button>
+
+    </div>
+
+    <input
+            type="text"
+            id="search"
+            placeholder="Search Category..."
+            onkeyup="searchCategory()">
+
+    <div id="categoryList" class="category-grid">
+
+    </div>
+
+</div>
+
+
+<!-- Popup -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Add Category</h2>
+
+        <input
+                type="text"
+                id="categoryName"
+                placeholder="Category Name">
+
+        <button onclick="saveCategory()">
+            Save
+        </button>
+
+        <button
+                class="cancel"
+                onclick="closePopup()">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/category.js"></script>
+
+</body>
+</html>
