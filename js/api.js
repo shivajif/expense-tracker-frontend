@@ -9,7 +9,7 @@
 // BACKEND URL
 // ==========================
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://expense-tracker-production-9b6b.up.railway.app/api";
 
 
 
