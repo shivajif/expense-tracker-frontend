@@ -14,23 +14,15 @@ const API_BASE_URL = "https://expense-tracker-production-8934.up.railway.app";
 // AUTH APIs
 // ==========================
 
-const LOGIN_API = API_BASE_URL + "/auth/login";
-const REGISTER_API = API_BASE_URL + "/users";
-
-
-// ==========================
-// USER PROFILE API
-// ==========================
-
-const PROFILE_API = API_BASE_URL + "/users/profile";
-
+const LOGIN_API = API_BASE_URL + "/api/auth/login";
+const REGISTER_API = API_BASE_URL + "/api/users";
+const PROFILE_API = API_BASE_URL + "/api/users/profile";
 
 // ==========================
 // DASHBOARD API
 // ==========================
 
 const DASHBOARD_API = API_BASE_URL + "/dashboard";
-
 
 // ==========================
 // CATEGORY APIs
