@@ -7,7 +7,7 @@
 // BACKEND URL
 // ==========================
 
-const API_BASE_URL = "https://expense-tracker-production-c35c.up.railway.app/api";
+const API_BASE_URL = "https://expense-tracker-production-8934.up.railway.app";
 
 
 // ==========================

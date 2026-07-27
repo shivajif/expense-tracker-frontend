@@ -141,10 +141,13 @@ async function loadDashboard() {
 
         if (!response.ok) {
 
-            throw new Error("Dashboard Error");
+    const error = await response.text();
 
-        }
+    console.log("Status :", response.status);
+    console.log("Server Error :", error);
 
+    throw new Error(error);
+}
         const data =
             await response.json();
 
@@ -380,11 +383,15 @@ async function loadRecentTransactions(){
 
         }
 
-        if(!response.ok){
+      if (!response.ok) {
 
-            throw new Error("Unable to load transactions");
+    const error = await response.text();
 
-        }
+    console.log("Status :", response.status);
+    console.log("Server Error :", error);
+
+    throw new Error(error);
+}
 
         const transactions =
             await response.json();
